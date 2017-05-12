@@ -103,7 +103,6 @@
 .banner {
     height: 860px;
     width: 100%;
-    background-color: green;
 }
 
 .banner .nav_out {
@@ -195,7 +194,6 @@
     height: 250px;
     margin: 0 auto;
     margin-top: 10px;
-    background-color: royalblue;
 }
 
 .banner .video>ul {
@@ -239,7 +237,6 @@
 
 .banner .video>ul>li:hover>img {
     opacity: 0.5;
-    transition:scale() ;
 }
 .banner .video>ul>li>img {
     width: 100%;
@@ -247,18 +244,15 @@
     margin: 0 -100%;
 }
 
-
     /*内容区域*/
 .content {
     height: 1883px;
     width: 100%;
-    background-color: yellow;
 }
 
 .content>dl {
     width: 1200px;
     height: 100%;
-    background-color: salmon;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -280,91 +274,161 @@
     margin-bottom: 30px;
 }
 
+/*内容手机部分*/
 .content .phone {
-    width: 1200px;
+    width: 100%;
     height: 1200px;
+}
+.content .phone>li{
+    float: left;
+    position: relative;
+    background-color: white;
+}
+.content .phone>li>img {
+    width: 100%;
+    transition: all 1s;
+}
+.content .phone .phone_info {
+    width: 200px;
     position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    bottom: 20px;
+    text-align: center;
+}
+.content .phone>li:nth-child(1) .phone_info {
+    margin-left: 300px;
+    margin-bottom: 130px;
 }
 
-.content .peijian {
-    width: 1200px;
-    height: 300px;
-    display: flex;
-    justify-content: space-between;
+.content .phone .phone_info>h4 {
+    font-size: 20px;
+    color: #000;
 }
-
-.content .phone>li {
-    float: left;
-
+.content .phone .phone_info>p {
+    font-size: 15px;
+    margin-bottom: 10px;
 }
-
-.content .peijian>li {
-    float: left;
-    width: 295px;
-    height: 300px;
-    background-color: honeydew;
+.content .phone .phone_info>span {
+    display: inline-block;
+    width: 108px;
+    height: 32px;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 10px;
+    line-height: 32px;
 }
-
 .content .phone>li:nth-child(1){
     width: 1200px;
     height: 395px;
-    background-color: white;
     margin-bottom: 10px;
-
+}
+.content .phone>li:nth-child(1)>img {
+    margin-top: 60px;
+    margin-left: -100px;
+}
+.content .phone>li:nth-child(1):hover img {
+    padding-left: 100px;
 }
 .content .phone>li:nth-child(2){
     width: 395px;
     height: 795px;
-    background-color: chartreuse;
     margin-right: 10px;
+    overflow: hidden;
+}
+.content .phone>li:nth-child(2):hover img {
+    transform: scale(1.2);
 }
 .content .phone>li:nth-child(3){
     width: 795px;
     height: 390px;
-    background-color: blanchedalmond;
     margin-bottom: 10px;
+    overflow: hidden;
+}
+.content .phone>li:nth-child(3) img {
+    margin-left: 100px;
+}
+.content .phone>li:nth-child(3):hover img {
+    margin-left: 1px;
 }
 .content .phone>li:nth-child(4){
-    height: 395px;
     width: 390px;
-    background-color: aqua;
+    height: 395px;
     margin-right: 10px;
+    overflow: hidden;
+}
+.content .phone>li:nth-child(4):hover img {
+    transform: scale(1.1);
 }
 .content .phone>li:nth-child(5){
-    height: 395px;
     width: 395px;
-    background-color:black;
+    height: 395px;
+    overflow: hidden;
 }
-
-.content .phone>li>img {
+.content .phone>li:nth-child(5):hover img {
+    transform: scale(1.1);
+}
+/*内容配件部分*/
+.content .peijian {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+.content .peijian>li {
+    height: 300px;
+    width: 295px;
+    float: left;
+    text-align: center;
+    background-color: white;
+}
+.content .peijian>li>img {
     width: 100%;
 }
-.content .phone>li:nth-child(1)>img {
-    margin-top: 60px;
-}
+.content .peijian>li>p {
+    margin-top: 20px;
 
-.content .phone .phone_info {
-    width: 200px;
-    position: absolute;
 }
 /*底部区域*/
-
 .footer {
     height: 396px;
-    width: 100%;
-    background-color: darkblue;
+    width: 1200px;
+    margin: 0 auto;
+}
+.footer hr {
+    margin-top: 40px;
+}
+.footer .in {
+    height: 356px;
+}
+.footer .in> .massage {
+    padding-top: 70px;
+    margin:0 100px;
 }
 
+.footer .in> .massage>.mblist {
+    float: left;
+    width: 1000px;
+    padding-top: 20px;
+    margin: auto;
+}
+.footer .in> .massage>.mblist dl {
+    float: left;
+    width: 200px;
+}
+.footer .in> .massage>.mblist dl dt {
+    color: #333;
+    height: 16px;
+    padding: 5px;
+}
+.footer .in> .massage>.mblist dl dd {
+    line-height: 2em;
+}
 
-
-
-
-
-
-
-
-
-
+.footer .in> .massage>.footer_nav {
+    padding: 20px;
+    font-size: 10px;
+}
 
 
 
