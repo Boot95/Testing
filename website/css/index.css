@@ -192,8 +192,7 @@
 .banner .video {
     width: 1200px;
     height: 250px;
-    margin: 0 auto;
-    margin-top: 10px;
+    margin: 10px auto 0px;
 }
 
 .banner .video>ul {
