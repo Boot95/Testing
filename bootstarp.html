@@ -185,10 +185,43 @@
 <button class="btn disabled">Button</button>
 
 
+<!--表单-->
+<!--<form action="" class="form-inline"></form>-->  <!--内联表单-->
+<form action="" class="form-inline">
+    <div class="control-group">
+        <label for="email">邮件:</label>
+        <input type="text" id="email" class="form-control" placeholder="请输入邮件地址">
+    </div>
+    <div class="control-group">
+        <label for="pas">密码:</label>
+        <input type="password" class="form-control" id="pas" placeholder="请输入密码">
+    </div>
+</form>
 
+表单组合
+<form action=""class="form-inline">
+    <div class="input-group">
+        <div class="input-group-addon">$</div>
+        <input type="text" class="form-control" placeholder="请输入价格">
+        <div class="input-group-addon">.00</div>
+    </div>
+</form>
 
-
-
+水平排列
+<form action="" class="form-horizontal">
+    <div class="control-group">
+        <label for="email"class="col-sm-2 control-label">邮件:</label>
+        <div class="col-sm-10">
+            <input type="text" id="email1" class="form-control" placeholder="请输入邮件地址">
+        </div>
+    </div>
+    <div class="control-group">
+        <label for="pas"class="col-sm-2 control-label">密码:</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="pas1" placeholder="请输入密码">
+        </div>
+    </div>
+</form>
 
 </body>
 </html>
