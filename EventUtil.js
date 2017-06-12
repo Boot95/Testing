@@ -93,7 +93,21 @@
         }else {
             return event.keyCode;
         }
-      }
+      },
+      // 剪切板事件
+      getClipboardText: function(event) {
+          var clipboardData = (event.clipboardData || window.clipboardData);
+          return clipboardData.getData("text");
+      },
+      setClipboardText: function(event,value) {
+          //w3c
+          if(event.clipboardData) {
+              return event.clipboardData("text/plain",value);
+          //    IE
+          }else if(window.clipboardData) {
+              return window.clipboardData.setData("text",value);
+          }
+      },
     };
 
 
