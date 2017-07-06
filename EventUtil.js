@@ -19,7 +19,7 @@
           }else if(element.detachEvent) {
               element.detachEvent("on"+type,handler);
           }else {
-              element["on"+type] = handler;
+              element["on"+type] = null;
           }
       },
     //获取事件对象
