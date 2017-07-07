@@ -30,7 +30,7 @@
       getTarget: function(event) {
           return event.target || event.srcElement;
       },
-    //    取消事件
+    //    阻止事件
       preventDefault: function(event) {
         if (event.preventDefault) {
             event.preventDefault();
@@ -38,7 +38,7 @@
             event.returnValue = false;
         }
       },
-    //    阻止事件
+    //    停止事件
       stopPropagation: function(event) {
         if(event.stopPropagation) {
             event.stopPropagation();
