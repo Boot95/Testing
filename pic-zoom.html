@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pic_zoom</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <style>
+        #pic {
+            margin: 0 auto;
+            max-width: 1700px;
+        }
+        #pic>img {
+            width: 400px;
+            height: 300px;
+            margin-right: 10px;
+        }
+        #tooltip {
+            position: absolute;
+        }
+        #tooltip>img {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+  <div id="pic">
+      <img src="http://opfj0bzey.bkt.clouddn.com/Bled Castle, Slovenia.jpg" class="pic">
+      <img src="http://opfj0bzey.bkt.clouddn.com/Antibes, France.jpg" class="pic">
+      <img src="http://opfj0bzey.bkt.clouddn.com/algEQavPY4M.jpg" class="pic">
+      <img src="http://opfj0bzey.bkt.clouddn.com/fly me to the moon.jpg" class="pic">
+  </div>
+  <script>
+      $(function () {
+//          设置放大元素与师表的间隙
+          var x = 10,
+              y = 20;
+          $(".pic")
+          //添加放大元素图片 地址 元素的位置
+              .mouseover(function(e){
+              var bigPic = "<div id='tooltip'><img src='"+this.src+"'></div>";
+              $("body").append(bigPic);
+              $("#tooltip")
+                  .css({
+                 "top": (e.pageY + y)+"px",
+                  "left":(e.pageX + x)+"px"
+              })
+                  .show("fast");
+          })
+//              鼠标移出元素
+              .mouseout(function (e) {
+                  $("#tooltip").remove();
+              })
+                      //鼠标在元素中移动时,放大元素跟随鼠标移动
+              .mousemove(function (e) {
+                  $("#tooltip").css({
+                      "top":(e.pageY + y)+"px",
+                      "left":(e.pageX + x)+"px"
+                  });
+              });
+      })
+  </script>
+</body>
+</html>

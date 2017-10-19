@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测试</title>
+    <style>
+        p {
+            clear: both;
+            margin: 0;
+            padding: .5em 0;
+        }
+        #tooltip {
+            position: absolute;
+            border: 1px solid #333;
+            background-color: #f7f5d1;
+            padding: 1px;
+            color: #333333;
+            display: none;
+        }
+        a:hover {
+            cursor: default;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+</head>
+<body>
+ <p><a href="#" class="tooltip" title="这是我的超链接提示1">提示1</a></p>
+ <p><a href="#" class="tooltip" title="这是我的超链接提示1">提示2</a></p>
+ <p><a href="#" title="这是超链接提示1">自带提示1</a></p>
+ <p><a href="#" title="这是超链接提示1">自带提示2</a></p>
+ <script>
+     $(function () {
+         $(".tooltip").mouseover(function (e) {
+             var x = 10,
+                 y = 20;
+             //将a元素的title赋值给mytitle
+            //防止默认的title与自定义的同时出现
+             this.myTitle = this.title;
+             this.title = "";
+            // 设置添加的元素
+             var tooltip = "<div id='tooltip'>"+this.myTitle+"</div>";
+             $("body").append(tooltip);
+              //设置自定义title出现的位置、速度、鼠标移入出现、移出还原设置、移动事title跟随
+             $("#tooltip")
+                 .css({
+                     "top":(e.pageY+y)+"px",
+                     "left":(e.pageX+x)+"px"
+                 }).show("fast");
+         })
+                 //鼠标移出事设置,及title归还给a元素title
+             .mouseout(function () {
+             this.title = $("#tooltip").text();
+             $("#tooltip").remove();
+         })
+//             鼠标移动时title跟随
+             .mousemove(function(e){$("#tooltip").css({
+                "top":(e.pageY + 20)+"px",
+                 "left":(e.pageX + 10)+"px"
+             });
+         });
+     })
+ </script>
+</body>
+</html>
